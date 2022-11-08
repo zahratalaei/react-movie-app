@@ -1,5 +1,5 @@
 const path = require("path");
-
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
 
 // Entry point that indicates where
@@ -44,5 +44,14 @@ output: {
 	path: path.resolve(__dirname, "dist/"),
 	publicPath: "/dist/",
 	filename: "bundle.js",
-},
+	},
+plugins:[
+	new HtmlWebPackPlugin({
+		template: path.resolve( __dirname, 'public/index.html' ),
+		filename: 'index.html'
+	})
+	],
+devServer: {},
+
+	   
 };
