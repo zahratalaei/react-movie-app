@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:ital,wght@0,400;1,300&display=swap');
+
+.container{
+    display: flex;
+    list-style: none;
+}
+
+.page{
+	padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    margin-right: 10px;
+    cursor: pointer;
+    color: #dcdcdc;
+}
+
+.disabled{
+    cursor: not-allowed;
+    
+}
+
+.active{
+	border: 2px solid #000;
+    font-weight: bold;
+}
+
+.previous{
+    padding: 10px;
+    border-radius: 6px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.break{
+    padding: 10px;
+}
+
+.next{
+    padding: 10px;
+    border-radius: 6px;
+    margin-right: 10px;
+    cursor: pointer;
+}
