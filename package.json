@@ -1,4 +1,5 @@
 {
+  "homepage": "https://zahratalaei.github.io/react-movie-app",
   "name": "tmdb-app",
   "version": "1.0.0",
   "description": "",
@@ -44,5 +45,5 @@
     "styled-components": "^5.3.6",
     "url-loader": "^4.1.1"
   },
-  "homepage": "https://zahratalaei.github.io/react-movie-app"
+  
 }
