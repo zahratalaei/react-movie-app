@@ -7,6 +7,8 @@
     "node": "18.*"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "npx webpack-dev-server --mode development --open --hot",
     "build": "npx webpack --mode production"
   },
@@ -33,6 +35,7 @@
     "bootstrap": "^5.2.2",
     "date-fns": "^2.29.3",
     "file-loader": "^6.2.0",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-paginate": "^8.1.4",
@@ -40,5 +43,6 @@
     "resolve-url-loader": "^5.0.0",
     "styled-components": "^5.3.6",
     "url-loader": "^4.1.1"
-  }
+  },
+  "homepage": "https://zahratalaei.github.io/react-movie-app"
 }
