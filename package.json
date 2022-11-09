@@ -1,5 +1,5 @@
 {
-  "homepage": "https://zahratalaei.github.io/react-movie-app",
+  
   "name": "tmdb-app",
   "version": "1.0.0",
   "description": "",
@@ -8,8 +8,6 @@
     "node": "18.*"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "npx webpack-dev-server --mode development --open --hot",
     "build": "npx webpack --mode production"
   },
