@@ -19,7 +19,7 @@ const App =()=>{
         
             if (!search) {
                 getMovies() 
-                console.log("getmovies")
+                console.log(movies)
                 console.log("currentpage:" ,currentPage);
         } else {
             searchMovie();   
@@ -40,10 +40,12 @@ const App =()=>{
     // get popular movies
     const getMovies = async ()=>{
         try{
-            const res = await fetch(apiConf.baseUrl + 'movie/popular' + apiConf.apiKey + '&page=1' )
+            const res = await fetch(apiConf.baseUrl + 'movie/popular?api_key=' + apiConf.apiKey + '&page=1' )
             const data = await res.json()
             if(data.results.length > 0){
                 setMovies(data.results)
+                console.log(data.results)
+                
                 setTotalPages(data.total_pages)
             }
         }
@@ -57,7 +59,7 @@ const App =()=>{
         if(search!=='')
         {
             try {
-            const res = await fetch(apiConf.baseUrl + 'search/movie' + apiConf.apiKey + '&query=' + search + '&page='+ currentPage)
+            const res = await fetch(apiConf.baseUrl + 'search/movie?api_key=' + apiConf.apiKey + '&query=' + search + '&page='+ currentPage)
             const data = await res.json();
             if(data.results.length > 0){
                 setMovies(data.results)
@@ -75,7 +77,7 @@ const App =()=>{
     }
     const fetchMovies = async(currentPage) => {
         try{
-            const res = await fetch(apiConf.baseUrl + 'movie/popular' + apiConf.apiKey + '&page=' + currentPage)
+            const res = await fetch(apiConf.baseUrl + 'movie/popular?api_key=' + apiConf.apiKey + '&page=' + currentPage)
             const data = await res.json()
             if(data.results.length > 0){
                return data.results
@@ -89,7 +91,7 @@ const App =()=>{
     }
     const fetchSearchMovies = async (currentPage) => {
         try{
-            const res = await fetch(apiConf.baseUrl + 'search/movie' + apiConf.apiKey + '&query=' + search + '&page='+ currentPage)
+            const res = await fetch(apiConf.baseUrl + 'search/movie?api_key=' + apiConf.apiKey + '&query=' + search + '&page='+ currentPage)
             const data = await res.json();
             if(data.results.length > 0){
                 return data.results

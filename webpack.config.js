@@ -17,20 +17,21 @@ module: {
 	{
 		test: /\.css$/, //checks for .css files
 		use: ["style-loader", "css-loader"],
-          },
-     {
-          test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
-          loader: 'url-loader'
-          },
-     {
-          test: /\.html$/,
-          use: [
-               {
-                    loader: "html-loader"
-               }
-          ]
-          },
-          
+	},
+	{
+		test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
+		loader: 'url-loader',
+	},
+	{
+		test: /\.(jpe?g|png|gif|svg)$/i, 
+		loader: 'file-loader',
+		
+	},
+	{
+		test: /\.js$/,
+		enforce: "pre",
+		use: ["source-map-loader"],
+	   },
 	],
 },
 
@@ -44,8 +45,5 @@ output: {
 	path: path.resolve(__dirname, "dist/"),
 	publicPath: "/dist/",
 	filename: "bundle.js",
-	},
-	devServer: {
-	port:process.env.PORT,
-}
+},
 };
